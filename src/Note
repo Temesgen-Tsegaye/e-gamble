@@ -1,0 +1,5 @@
+mesh=position,rotation,scale 
+material=color,wireframe
+useFrame((state,delta)={})
+Canvas =onCreated
+REMEMBER look custome geometry
