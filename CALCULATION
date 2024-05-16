@@ -1,0 +1,5 @@
+P=C(noOfSelected,match)*C(80-noofselected,20-noofmatch)/C(80,20)
+
+1/P fair payout
+
+adjustd=fair*(1-H)  -->H is house edge 0.3 if how to keep 30% 

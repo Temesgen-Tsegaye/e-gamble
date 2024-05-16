@@ -7,10 +7,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import NumberBoard from "./component/numberBoard";
 import { generateArryOfRandNumbers } from "../utils/generateNumbers";
+import PayBoard from "./component/payBoard";
 
 export default function Keno() {
   const container = useRef();
   const [generated, setGenerated] = useState([]);
+
+  const [selected,setSelected]=useState([])
+  console.log(selected,'sele')
   const { contextSafe } = useGSAP(
     () => {
       if (generated.length != 0) {
@@ -26,7 +30,7 @@ export default function Keno() {
             ease: "bounce.out",
           });
           gsap.to(`.cards${items}`, {
-            background: "green",
+            background: "#D97706",
             duration: 1,
             delay: index,
           });
@@ -42,7 +46,7 @@ export default function Keno() {
             ease: "bounce.out",
           });
           gsap.to(`.cards${items}`, {
-            background: "green",
+            background: "#D97706",
             duration: 1,
             delay: 10 + index,
           });
@@ -64,9 +68,20 @@ export default function Keno() {
     >
       <Tube generatedNumbers={generated} />
       <div className="flex flex-col justify-around pt-14 h-full w-[75%]">
-        <NumberBoard generatedNumbers={generated} />
+        <div className=" flex gap-4">
+        <NumberBoard  selected={selected} setSelected={setSelected} generatedNumbers={generated}  />
+        <PayBoard selected={selected} setSelected={setSelected}/>
+
+        </div>
         <div className="flex justify-around">
-          <button className={styles.button} onClick={()=>generated([])}>Restart</button>
+          <button className={styles.button} onClick={()=>{
+               generated.map((items,index)=>{
+                gsap.to(`.cards${items}`, {
+                  background: "#EF4444",
+                
+                });
+               })
+            setGenerated([])}}>Restart</button>
           <button className={`${styles.button}`}>Play</button>
           <button className={styles.button} onClick={onPlay}>
             Play
