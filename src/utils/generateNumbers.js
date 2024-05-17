@@ -14,7 +14,6 @@ export function generateArryOfRandNumbers(){
 
 }
 
-console.log(arrOf20,'2020')
 return arrOf20
        
 }
