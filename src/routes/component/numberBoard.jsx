@@ -6,7 +6,6 @@ export default function NumberBoard({
   selected,
 }) {
 
-  console.log(setSelected,selected,'sss')
   return (
     <div className="bg-red-500  grid grid-cols-10 flex-1">
       {[...Array(80).keys()]

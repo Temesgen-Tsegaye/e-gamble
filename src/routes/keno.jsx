@@ -14,11 +14,9 @@ export default function Keno() {
   const [generated, setGenerated] = useState([]);
 
   const [selected,setSelected]=useState([])
-  console.log(selected,'sele')
   const { contextSafe } = useGSAP(
     () => {
       if (generated.length != 0) {
-        console.log('here')
         generated?.slice(0, 10)?.map((items, index) => {
           const vh = window.innerHeight;
           let hh = (75 * vh) / 100 - index * ((7.5 * vh) / 100);
@@ -57,7 +55,6 @@ export default function Keno() {
   );
   const onPlay = () => {
     const randArray = generateArryOfRandNumbers();
-    console.log(randArray, "rand");
     setGenerated(randArray);
   };
 

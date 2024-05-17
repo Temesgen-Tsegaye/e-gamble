@@ -5,11 +5,9 @@ import Ball from './ball';
 import { forwardRef } from 'react';
 const Tube=forwardRef(function Tube(props,ref){
 
-              console.log(props,'pp')
        let filterd
        if(props.next){
          filterd =props.generatedNumbers?.slice(10)
-        console.log(filterd)
 
        }else{
              filterd=props.generatedNumbers?.slice(0,10)
