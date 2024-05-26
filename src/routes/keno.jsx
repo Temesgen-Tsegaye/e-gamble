@@ -67,7 +67,7 @@ export default function Keno() {
       <div className="flex flex-col justify-around pt-14 h-full w-[75%]">
         <div className=" flex gap-4">
         <NumberBoard  selected={selected} setSelected={setSelected} generatedNumbers={generated}  />
-        <PayBoard selected={selected} setSelected={setSelected}/>
+        {/* <PayBoard selected={selected} setSelected={setSelected}/> */}
 
         </div>
         <div className="flex justify-around">
